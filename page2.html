@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <style>
+        
+        body {
+            background-color: rgb(243, 173, 250);
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        label1 { 
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        label2 {
+            text-align: right;
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+            align-items: center;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Réservation</h1>
+
+    <form id="inscriptionForm" onsubmit="return verif()">
+        <label for="nom">Nom et Prénom * :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="cin">CIN * :</label>
+        <input type="text" id="cin" name="cin" pattern="[0-9]{8}" title="Veuillez entrer 8 chiffres." required>
+
+        <label for="email">Adresse e-mail * :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="numtel">N° téléphone * :</label>
+        <input type="numtel" id="numtel" name="numtel" required>
+
+        <Label> Date de réservation * : </Label>
+        <Input type="Date" name="Date" placeholder="Date"  > 
+        <tr>
+        <label> Heure de réservation * : </label>
+        <Input type="Time" name="Heure" placeholder="heure"  > 
+
+        <label for="modules">Nombre de place réservé *:</label>
+        <select id="modules" name="modules" multiple size="3">
+            <option value="places">2 places</option>
+            <option value="places">4 places</option>
+            <option value="places">6 places</option>
+            <option value="places">8 places</option>
+            <option value="places">12 places</option>
+
+        </select>
+        <br>
+        <label2> (*)Champs Obligatoire </label2>
+        <br>
+        <button type="submit">Envoyer</button>
+        <button type="button" onclick="resetForm()">Annuler</button>
+    </form>
+
+    <script>
+        function verif() {
+            var nom = document.getElementById('nom').value;
+            var cin = document.getElementById('cin').value;
+            var numtel = document.getElementById('numtel').value;
+        
+
+            if (nom.trim() === '' || cin.length !== 8 || email.indexOf('@') === -1) {
+                alert('Veuillez remplir tous les champs correctement.');
+                return false;
+            }
+            return true;
+        }
+
+        function resetForm() {
+            document.getElementById('inscriptionForm').reset();
+        }
+    </script>
+    <br><br>
+        <center>
+            <a href="index4.html" >
+                page principale
+              </a>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
+

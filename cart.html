@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="theme-color" content="linear-gradient(to bottom, #61daff, #656bff)">
+   <meta name="description" content="We will simple add to cart using javascript localstorage">
+   <meta name="keywords" content="add to cart, add to cart javascript, localstorage add to cart, ecommerce shopping javascript, shooping cart demo">
+   <meta name="author" content="Rajamanickam">
+   <link rel="stylesheet" href="cart.css">
+   <link rel="icon" href="https://rajamanickam.vercel.app/favicon-rajamanickam.png">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/all.min.css">
+   <title>Simple Add to cart functionality using Javascript</title>
+</head>
+
+<body>
+   <main>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+         <a class="navbar-brand" href="#"><strong>Shoping Cart</strong></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="search" id="search_field"  placeholder="Search" aria-label="Search">
+            </form>
+            <button type="button" class="btn btn-success my-2 my-sm-0" data-toggle="modal"
+               data-target="#staticBackdrop">
+                <i class="fas fa-shopping-cart total-count"></i>
+            </button>
+         </div>
+      </nav>
+      <section>
+         <div class="featured-area pt-100 pb-70">
+            <div class="container">
+               <div class="tab featured-tab-area">
+                  <div class="tab_content current active pt-45">
+                     
+                     <div class="tabs_item current">
+                        <div class="row justify-content-center">
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product1.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#">Nescafé</a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4> 70 $</h4>
+                                       <span>(4.4)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="Oxford" data-price="1200" class="default-btn border-radius-5"> Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product2.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#">GOLDSPECIAL </a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4>40 $ </h4>
+                                       <span>(4.4)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="Tunic" data-price="459" class="default-btn border-radius-5">Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product3.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#"> FRESH BREW	</a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4>60 $ </h4>
+                                       <span>(4.4)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="Huawei" data-price="4059" class="default-btn border-radius-5">Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product4.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#">COFFEE</a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4>50 $ </h4>
+                                       <span>(4.9)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="Short-Sleeve" data-price="800" class="default-btn border-radius-5">Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product5.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#">Fresh Roauted COFFEE</a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4>60 $ </h4>
+                                       <span>(4.4)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="Culotte" data-price="2459" class="default-btn border-radius-5">Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                              <div class="featured-item">
+                                 <div class="featured-item-img">
+                                    <a href="#">
+                                       <img src="./images/product6.png" alt="Images">
+                                    </a>
+                                 </div>
+                                 <div class="content">
+                                    <h3><a href="#">1001 Gout EXPRESS </a></h3>
+                                    <hr>
+                                    <div class="content-in">
+                                       <h4>30 $</h4>
+                                       <span>(4.4)<i class="fa fa-star"></i></span>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-content-list">
+                                       <button type="button" data-name="FireBoltt" data-price="1999" class="default-btn border-radius-5">Add to cart</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <p id="not_found"></p>
+                  </div>
+               </div>
+            </div>
+            <center>
+                <a href="index4.html" class="button button--flex button--white">
+                    Get to page principal
+                <i class="uil uil-message project__icon button__icon"></i>
+                </a>
+                <br><br>
+            </center>
+            
+         </div>
+         
+      </section>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <table class="show-cart table">
+                  </table>
+                  <div class="grand-total">Total price: <span class="total-cart"></span> </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-danger clear-all">Clear All</button> -->
+                </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="cart.js"></script>
+
+
+</body>
+
+</html>
